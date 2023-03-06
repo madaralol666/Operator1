@@ -3,9 +3,7 @@
 using namespace std;
 class Test
 {
-
 	int a_, b_;
-	string pudge_ = "pudge";
 public:
 	Test(int a, int b)
 	{
@@ -31,14 +29,8 @@ public:
 		b_ += test.b_;
 		return *this;
 	}
-	friend Test operator+(const Test& a, const Test& b);
-	friend ostream& operator<<(ostream& a, Test b) 
-	{
-		return (a << b.a_ << "/" << b.b_);
-	}
-	friend istream& operator>>(istream& a, Test& b)
-	{
-		return a >> b.a_ >> b.b_;
-	}
+	friend Test operator+(const Test&, const Test&);
+	friend ostream& operator<<(ostream&, const Test&);
+	friend istream& operator>>(istream& a, Test& b);
 };
 
